@@ -233,9 +233,15 @@ Examples:
         sys.exit(1)
 
     # Find matching avatar
+    avatars = get_avatars(stickers)
     avatar_uuid = None
+    if not args.avatar and len(avatars) > 1:
+        print(f"Error: Found {len(avatars)} avatars, and their stickers share file names.")
+        print("Pass --avatar with one of these IDs:")
+        for uuid in avatars:
+            print(f"  {uuid}")
+        sys.exit(1)
     if args.avatar:
-        avatars = get_avatars(stickers)
         matches = [u for u in avatars.keys() if args.avatar.upper() in u.upper()]
         if len(matches) == 0:
             print(f"Error: No avatar found matching '{args.avatar}'")

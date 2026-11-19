@@ -45,7 +45,7 @@ python3 memoji_export.py -o ./export --avatar <id>
 
 `<id>` is a Memoji ID from `--list`, for example `1A2B3C4D`. The script writes one 512×512 PNG file for each expression into `./export`.
 
-Pass `--avatar` when the cache holds more than one Memoji. The script names each file after its expression only. Without `--avatar`, the stickers of different Memoji overwrite each other.
+When the cache holds more than one Memoji, `--avatar` is required. The script names each file after its expression only, so it refuses to write the stickers of several Memoji into one folder.
 
 ### Options
 
