@@ -1,0 +1,13 @@
+# macOS
+.DS_Store
+
+# Python
+__pycache__/
+.venv/
+
+# Local Claude Code settings
+.claude/settings.local.json
+
+# Exported stickers
+export/
+test_export/
